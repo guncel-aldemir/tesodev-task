@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MainContext } from "./Context/MainContext";
 import MockData from "./mockData.json";
@@ -24,7 +24,7 @@ function App() {
   const [dropdown, setDropdown] = useState(false);
   const [list, setList] = useState([]);
   const [sortedValue, setSortedValue] = useState("");
-
+  const [errorStyle,setErrorStyle]= useState(false);
   const ContextData = {
     datas,
     setDatas,
@@ -48,7 +48,7 @@ function App() {
     setEmail,
     errorOpen,setErrorOpen,
     disabled,setDisabled,
-    showMore,setShowMore,setDropdown,list,dropdown, setList,sortedValue, setSortedValue
+    showMore,setShowMore,setDropdown,list,dropdown, setList,sortedValue, setSortedValue,errorStyle,setErrorStyle
   };
   return (
     <div className="App">

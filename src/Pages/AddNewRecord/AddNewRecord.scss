@@ -1,5 +1,6 @@
 @use "../../Style/" as *;
 .addNewRecord {
+  width: 100%;
   .navbar {
     @include main-display-row;
     justify-content: flex-start;
@@ -18,21 +19,22 @@
     }
   }
   .formSides {
-    @include main-display-row;
+    @include main-display-column;
     justify-content: center;
     margin-top: 80px;
     .formSide {
       @include main-display-column;
       align-items: flex-start;
       width: 50%;
-      & > .nameLabel {
+      &>label{
         margin-bottom: 7px;
       }
+      
       & > .labelError {
         color: #ff0000;
       }
       & > input {
-        width: 100%;
+        width: 590px;
         height: 46px;
         border: 1.5px solid #484848;
         border-radius: 12px;
@@ -73,9 +75,11 @@
   }
   .errorName {
     @include main-display-column;
-    width: 40%;
+    width: 30%;
     background: #c4c4c4;
+    align-self: flex-end;
     border-radius: 8px;
+    margin-top: 30px;
     .exit {
       width: 100%;
       @include main-display-row;
@@ -84,6 +88,7 @@
       margin-top: 10px;
     }
     .errorMessage {
+      @include main-display-row;
       .errorText > h4 {
         font-family: $main-font;
         font-style: normal;
@@ -104,10 +109,47 @@
     }
   }
 }
+@media(min-width: 768px) and (max-width: 992px){
+  .addNewRecordSide{
+    .formSides{
+      display: flex;
+      justify-content: flex-start;
+      .formSide{
+        &>input{
+          width: 350px;
+        }
+      }
+     
+    }
+    .errorName{
+      width: 40%;
+    }
+  }
+}
+@media(min-width: 320.1px) and (max-width: 576px){
+  .addNewRecordSide{
+    .formSides{
+      display: flex;
+      justify-content: flex-start;
+      .formSide{
+        &>input{
+          width: 230px;
+        }
+      }
+     
+    }
+    .errorName{
+      width: 60%;
+    }
+  }
+}
 @media (min-width: 270px) and (max-width: 320px) {
   .addNewRecord {
     .navbar {
       @include main-display-column;
+    }
+    .errorName{
+      width: 60%;
     }
   }
 }

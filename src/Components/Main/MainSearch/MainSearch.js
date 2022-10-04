@@ -10,7 +10,7 @@ const MainSearch = () => {
 
 
   const handleSearch = () => {
-    console.log("girdi");
+   
     if(query !== ""){
     
       setIsShown(true)
@@ -20,7 +20,7 @@ const MainSearch = () => {
       
     }
    
-    console.log("çıktı");
+    
     if (
       datas.filter((item) => item[0].toLocaleLowerCase().includes(query))
         .length > 3

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { MainContext } from "../../Context/MainContext";
 import { NavLink } from "react-router-dom";
 import ReactPaginate from "react-paginate";
@@ -15,9 +15,6 @@ const SearchMoreList = () => {
 
   const handleClick = () => {
     
-
-
-
   };
   const handleDropdown = () => {
     setDropdown(!dropdown);
@@ -73,13 +70,20 @@ const SearchMoreList = () => {
   }, [query]);
 
   const handleSort = () => {
- 
+
     const copylist = [...list];
+
     if (sortedValue === "asc") {
       const sortItems = copylist.sort((a, b) => a[0].localeCompare(b[0]));
       setList(sortItems);
     } else if (sortedValue === "desc") {
       const sortItems = copylist.sort((a, b) => b[0].localeCompare(a[0]));
+      setList(sortItems);
+    } else if(sortedValue === "yearAsc"){
+      const sortItems = copylist.slice().sort((a, b) => a[3].split('/').reverse().join("")-b[3].split('/').reverse().join(""));
+      setList(sortItems);
+    } else if(sortedValue === "yearDesc"){
+      const sortItems = copylist.sort((a, b) => b[3].split('/').reverse().join("")-a[3].split('/').reverse().join(""));
       setList(sortItems);
     }
   };
@@ -94,7 +98,10 @@ const SearchMoreList = () => {
       <div className="searchMore">
         <div className="searchSide">
           <div className="logo">
+            <NavLink to="/">
             <img src={Logo} alt="" />
+            </NavLink>
+            
           </div>
           <div className="searchInput">
             <input
@@ -130,11 +137,7 @@ const SearchMoreList = () => {
                   onPageChange={changePage}
                 />
               </div>
-              
-              
             </div>
-          
-
           <div className="dropdownList">
             <div className="orderBy">
               <BsArrowDownUp size={26} />
@@ -142,7 +145,6 @@ const SearchMoreList = () => {
                 order by
               </button>
             </div>
-
             {dropdown && (
               <div className="dropdownSide">
                 <div className="nameAscend">
@@ -163,6 +165,24 @@ const SearchMoreList = () => {
                     name descending
                   </button>
                 </div>
+                <div className="yearAscend">
+                  <button
+                    onClick={() => {
+                      setSortedValue("yearAsc");
+                    }}
+                  >
+                    year ascending
+                  </button>
+                </div>
+                <div className="yearDescend">
+                  <button
+                    onClick={() => {
+                      setSortedValue("yearDesc");
+                    }}
+                  >
+                    year descending
+                  </button>
+                </div>
               </div>
             )}
           </div>
@@ -173,5 +193,4 @@ const SearchMoreList = () => {
     </div>
   );
 };
-
 export default SearchMoreList;

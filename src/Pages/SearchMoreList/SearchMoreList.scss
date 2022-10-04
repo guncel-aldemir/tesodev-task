@@ -3,9 +3,10 @@
 .searchSide {
   @include main-display-row;
   justify-content: space-around;
+  gap: 20px;
   .searchInput {
     & > .inputClass {
-      width: 509px;
+      width: 610px;
       height: 46px;
       background: #ffffff;
       border: 1px solid #000000;
@@ -23,6 +24,8 @@
     }
   }
   .addNewRecord {
+    display: flex;
+    justify-content: center;
     .addNew {
       @include add-new-record-button;
       border: 1px solid $button-color;
@@ -103,6 +106,7 @@ padding: 10px 20px;
           background: #ffffff;
           border: 1px solid #484848;
           border-radius: 4px;
+          padding: 4px;
           & > a {
             text-decoration: none;
             font-family: $text-font;
@@ -147,12 +151,14 @@ padding: 10px 20px;
     }
     .dropdownSide {
       @include main-display-column;
+     align-items: flex-start;
       margin-top: 20px;
       background: #ffffff;
       border: 1px solid #8f8f8f;
       box-shadow: 4px 6px 12px 4px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
       width: 156px;
+      padding: 10px;
       
       .nameAscend {
         & > button {
@@ -165,6 +171,32 @@ padding: 10px 20px;
           line-height: 16px;
           cursor: pointer;
           color: #000000;
+          margin-bottom: 3px;
+          padding: 5px;
+          &:hover {
+            background: #b3b3b3;
+            border-radius: 8px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+            color: #fff;
+          }
+        }
+      }
+      .yearAscend {
+        & > button {
+          border: none;
+          background: #fff;
+          font-family: $text-font;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          cursor: pointer;
+          color: #000000;
+          margin-bottom: 3px;
+          padding: 5px;
           &:hover {
             background: #b3b3b3;
             border-radius: 8px;
@@ -187,6 +219,32 @@ padding: 10px 20px;
           line-height: 16px;
           color: #000000;
           cursor: pointer;
+          margin-bottom: 3px;
+          padding: 5px;
+          &:hover {
+            background: #b3b3b3;
+            border-radius: 8px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+            color: #fff;
+          }
+        }
+      }
+      .yearDescend {
+        & > button {
+          border: none;
+          background: #fff;
+          font-family: $text-font;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          color: #000000;
+          cursor: pointer;
+          margin-bottom: 3px;
+          padding: 5px;
           &:hover {
             background: #b3b3b3;
             border-radius: 8px;
@@ -201,7 +259,28 @@ padding: 10px 20px;
     }
   }
 }
-
+@media (min-width: 1024.1px) and (max-width: 1200px){
+  .searchSide{
+    display: flex;
+    .searchInput{
+      display: flex;
+      &>.inputClass{
+        width: 500px;
+      }
+    }
+  }
+}
+@media (min-width: 992.1px) and (max-width: 1024px){
+  .searchSide{
+    display: flex;
+    .searchInput{
+      display: flex;
+      &>.inputClass{
+        width: 450px;
+      }
+    }
+  }
+}
 @media (min-width: 768px) and (max-width: 992px){
   .searchSide{
     display: flex;

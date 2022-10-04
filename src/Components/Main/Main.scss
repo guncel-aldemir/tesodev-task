@@ -10,11 +10,13 @@
    width: 100%;
    margin-right: 63px;
    text-align: center;
+  
     & > .addNew {
       @include add-new-record-button;
       border: 1px solid $button-color;
       background-color: $button-color;
       font-family: $text-font;
+      padding-top: 12px ;
       &:hover{
         background-color: $button-hover-color;
       }
@@ -43,7 +45,7 @@
     
     width: 692px;
     height: 36px;
-    margin-left: 90px;
+   
     &>span{
       color: $title-color;
       font-family: $main-font;

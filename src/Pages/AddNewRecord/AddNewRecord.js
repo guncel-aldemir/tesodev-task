@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../Assets/Images/jpg 1.svg";
 import { BiArrowBack } from "react-icons/bi";
@@ -8,7 +8,7 @@ import {AiFillCloseCircle} from "react-icons/ai";
 import Error from "../../Assets/Icons/ErrorIcons/Buttons.svg";
 import "./AddNewRecord.scss";
 const AddNewRecord = () => {
-  const [errorStyle,setErrorStyle]= useState(false);
+ 
   
   const {
     name,
@@ -21,19 +21,16 @@ const AddNewRecord = () => {
     setEmail,
     errorOpen,
     setErrorOpen,
- 
+    errorStyle,setErrorStyle
   } = useContext(MainContext);
-  console.log("name length=",name.length);
-  console.log("city length=",city.length);
-  console.log("country length=",country.length);
-  console.log("email length=",email.length);
+
 
   const isEnabled = name.split("").length >2 && country.toString().length > 0 &&
   city.toString().length > 0 &&
   email.toString().length >2 ;
 
   const handleSubmit = (e) => {
-    console.log("deneme");
+    
     e.preventDefault();
     if(name.split(" ").length <2){
       setErrorOpen(true)
@@ -41,23 +38,13 @@ const AddNewRecord = () => {
     
      
     } else{
-      console.log("oldu");
+      
     }
  
   };
 
 
-console.log("erroropen",errorOpen);
 
-  console.log("name split",name.split(" ").length);
-  console.log("isEnabled",isEnabled);
-  // useEffect(()=>{
-  //   handleDisabled()
-
-  // },[])
-  // useEffect(()=>{
-  //   handleErrorMessage()
-  // },[disabled])
 
   return (
     <div className="addNewRecordSide">
@@ -86,7 +73,7 @@ console.log("erroropen",errorOpen);
             }
 
           />
-          {/* {handleErrorInput(name) } */}
+         
           <label className="countrySide">Country</label>
           <input
             type="text"
@@ -115,9 +102,7 @@ console.log("erroropen",errorOpen);
           <button type="submit" disabled={!isEnabled} className={!isEnabled ? "btnDisabled":"btnActive"} >Add</button>
         </div>
           </form>
-        </div>
-        
-        {errorOpen && <div className="errorName">
+          {errorOpen && <div className="errorName">
             <div className="exit">
             <AiFillCloseCircle onClick={()=>setErrorOpen(false)}/>
             </div>
@@ -132,6 +117,9 @@ console.log("erroropen",errorOpen);
             </div>
           </div>
         }
+        </div>
+        
+        
       </div>
     </div>
   );
