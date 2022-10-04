@@ -1,0 +1,156 @@
+@use "../../Style/" as *;
+.footer {
+  background: rgba(41, 78, 152, 0.72);
+  width: 100%;
+  .footerSide {
+    @include main-display-row;
+    justify-content: space-around;
+    margin: 27px 54px 27px 60px;
+    .address {
+      @include main-display-row;
+      gap: 25px;
+      .textSide {
+        font-family: $text-font;
+  
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: left;
+  
+        color: #fff;
+      }
+    }
+    .map{
+      &>iframe{
+width: 460px;
+      }
+    }
+  }
+}
+@media (min-width: 990px) and (max-width: 1024px) {
+  .footer{
+    display: flex;
+    width: 100%;
+    .footerSide{
+        width: 80%;
+        justify-content: space-between;
+        .address{
+            width: 40%;
+        }
+        .map{
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            &>iframe{
+              width: 320px;
+            }
+        }
+    }
+  }
+  
+}
+@media (min-width: 768px) and (max-width: 989.9px) {
+    .footer{
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      .footerSide{
+          
+        //   .address{
+            
+        //      &>.image{
+                
+        //         &>img{
+                   
+        //         }
+        //      }
+        //      .textSide{
+              
+        //      }
+        //   }
+          .map{
+              display: flex;
+              justify-content: flex-end;
+              &>iframe{
+                width: 320px;
+              }
+          }
+      }
+    }
+    
+  }
+  @media (min-width: 576px) and (max-width: 767.9px) {
+    .footer{
+      @include main-display-column;
+      justify-content: space-around;
+      width: 100%;
+      .footerSide{
+        @include main-display-column;
+        justify-content: space-around;
+        //   .address{
+            
+        //      &>.image{
+                
+        //         &>img{
+                   
+        //         }
+        //      }
+        //      .textSide{
+              
+        //      }
+        //   }
+          .map{
+              display: flex;
+              justify-content: center;
+             width: 100%;
+          }
+      }
+    }
+    
+  }
+  @media (min-width: 414px) and (max-width: 575.9px) {
+    .footer{
+      @include main-display-column;
+      justify-content: space-around;
+      width: 100%;
+      .footerSide{
+        @include main-display-column;
+        justify-content: space-around;
+        width: 50%;
+        .address{
+            @include main-display-column;
+        }
+        
+          .map{
+              display: flex;
+              justify-content: center;
+             width: 100%;
+          }
+      }
+    }
+    
+  }
+  @media (min-width: 260px) and (max-width: 413.9px) {
+    .footer{
+      @include main-display-column;
+      justify-content: space-around;
+      width: 100%;
+      .footerSide{
+        @include main-display-column;
+        justify-content: space-around;
+        width: 50%;
+        .address{
+            @include main-display-column;
+        }
+        
+          .map{
+              display: flex;
+              justify-content: center;
+             width: 100%;
+          }
+      }
+    }
+    
+  }
+

@@ -1,0 +1,220 @@
+@use "../../Style/index" as *;
+
+.main {
+  @include main-display-column;
+  justify-content: center;
+  margin-top: 76px;
+  .addButton {
+    display: flex;
+    justify-content: flex-end;
+   width: 100%;
+   margin-right: 63px;
+   text-align: center;
+    & > .addNew {
+      @include add-new-record-button;
+      border: 1px solid $button-color;
+      background-color: $button-color;
+      font-family: $text-font;
+      &:hover{
+        background-color: $button-hover-color;
+      }
+    }
+  }
+  .tesodevImg {
+    margin-top: 73px;
+    @include main-display-row;
+    justify-content: center;
+  }
+  .searchText {
+    @include main-display-row;
+    justify-content: flex-end;
+    margin-left: 30px;
+    margin-top: 12px;
+    color: #484848;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    width: 28%;
+  }
+  .findText {
+    
+    
+    width: 692px;
+    height: 36px;
+    margin-left: 90px;
+    &>span{
+      color: $title-color;
+      font-family: $main-font;
+      @include title;
+    }
+  }
+
+  
+}
+
+@media (min-width: 1024px) and (max-width: 1119.9px){
+  .mainSide{
+    .main{
+      display: flex;
+      .addButton{
+        width: 70%;
+        justify-content: flex-end;
+      }
+      .tesodevImg{
+        justify-content: flex-start;
+      }
+      .searchText{
+        justify-content: flex-end;
+      }
+      .findText{
+        margin-left: 0;
+      }
+      .mainSearch{
+        display: flex;
+        justify-content: flex-start;
+        width: 80%;
+        .results{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.9px){
+  .mainSide{
+    .main{
+      display: flex;
+      .addButton{
+        
+        justify-content: flex-end;
+      }
+      .tesodevImg{
+        justify-content: flex-start;
+      }
+      .searchText{
+        justify-content: flex-end;
+      }
+      .findText{
+        width: 90%;
+        display: flex;
+        justify-content: flex-start;
+
+      }
+      // .mainSearch{
+      //   display: flex;
+      //   justify-content: flex-start;
+      //   width: 60%;
+      //   .results{
+      //     width: 100%;
+      //   }
+      // }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.9px){
+  .mainSide{
+    .main{
+      display: flex;
+      .addButton{
+        justify-content: flex-end;
+      }
+      .tesodevImg{
+        justify-content: flex-start;
+      }
+      .searchText{
+        width: 45%;
+        justify-content: flex-end;
+      }
+      .findText{
+        width: 75%;
+        margin-left: 0;
+      }
+      // .mainSearch{
+      //   .results{
+      //     width: 100%;
+      //   }
+      // }
+    }
+  }
+}
+@media (min-width: 414px) and (max-width: 575.9px){
+  .mainSide{
+    .main{
+      display: flex;
+      .addButton{
+        justify-content: flex-end;
+      }
+      .tesodevImg{
+        justify-content: flex-start;
+      }
+      .searchText{
+        width: 75%;
+        justify-content: flex-end;
+      }
+      .findText{
+        width: 90%;
+        margin-left: 0;
+      }
+      // .mainSearch{
+      //   .results{
+      //     width: 100%;
+      //   }
+      // }
+    }
+  }
+}
+@media (min-width: 376px) and (max-width: 413.9px){
+  .mainSide{
+    .main{
+      display: flex;
+      .addButton{
+        justify-content: flex-end;
+      }
+      .tesodevImg{
+        justify-content: flex-start;
+      }
+      .searchText{
+        width: 75%;
+        justify-content: flex-end;
+      }
+      .findText{
+        width: 90%;
+        margin-left: 0;
+      }
+      // .mainSearch{
+      //   .results{
+      //     width: 100%;
+      //   }
+      // }
+    }
+  }
+}
+@media (min-width: 270px) and (max-width: 375.9px){
+  .mainSide{
+    .main{
+      display: flex;
+      .addButton{
+        justify-content: flex-end;
+      }
+      .tesodevImg{
+        justify-content: flex-start;
+      }
+      .searchText{
+        width: 75%;
+        justify-content: flex-end;
+      }
+      .findText{
+        width: 90%;
+        margin-left: 0;
+      }
+      // .mainSearch{
+      //   .results{
+      //     width: 100%;
+      //   }
+      // }
+    }
+  }
+}

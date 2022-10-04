@@ -1,0 +1,113 @@
+@use "../../Style/" as *;
+.addNewRecord {
+  .navbar {
+    @include main-display-row;
+    justify-content: flex-start;
+    gap: 39px;
+    .return {
+      & > a {
+        text-decoration: none;
+        font-family: $text-font;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        color: $add-new-color;
+        margin-left: 12px;
+      }
+    }
+  }
+  .formSides {
+    @include main-display-row;
+    justify-content: center;
+    margin-top: 80px;
+    .formSide {
+      @include main-display-column;
+      align-items: flex-start;
+      width: 50%;
+      & > .nameLabel {
+        margin-bottom: 7px;
+      }
+      & > .labelError {
+        color: #ff0000;
+      }
+      & > input {
+        width: 100%;
+        height: 46px;
+        border: 1.5px solid #484848;
+        border-radius: 12px;
+        background: #fff;
+        margin-bottom: 37px;
+        color: $add-new-color;
+        &:hover {
+          background: rgba(100, 100, 100, 0.08);
+          border: 2px solid rgba(72, 72, 72, 0.6);
+          border-radius: 8px;
+        }
+      }
+      & > .errorInput {
+        background: #ffffff;
+        border: 1.5px solid #ff0000;
+        border-radius: 8p;
+        color: #ff0000;
+      }
+    }
+  }
+
+  .buttonSide {
+    @include main-display-row;
+    justify-content: flex-end;
+    width: 80%;
+    .btnDisabled {
+      @include search-button;
+      background-color: gray;
+    }
+    .btnActive {
+      @include search-button;
+      background: #204080;
+      cursor: pointer;
+      &:hover {
+        background: #4f75c2;
+      }
+    }
+  }
+  .errorName {
+    @include main-display-column;
+    width: 40%;
+    background: #c4c4c4;
+    border-radius: 8px;
+    .exit {
+      width: 100%;
+      @include main-display-row;
+      justify-content: flex-end;
+      margin-right: 30px;
+      margin-top: 10px;
+    }
+    .errorMessage {
+      .errorText > h4 {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 36px;
+        color: #090a0a;
+      }
+      .errorText > p {
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 24px;
+
+        color: #090a0a;
+      }
+    }
+  }
+}
+@media (min-width: 270px) and (max-width: 320px) {
+  .addNewRecord {
+    .navbar {
+      @include main-display-column;
+    }
+  }
+}

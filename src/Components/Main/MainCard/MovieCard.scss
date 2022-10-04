@@ -1,0 +1,61 @@
+@use "../../../Style/" as *;
+
+.cards {
+  margin-top: 93px;
+  width: 90%;
+  .swiper-button-next {
+    color: #8a8a8a;
+    background: #eeeeee;
+    border-radius: 24px;
+
+    &::after {
+      content: url("../../../Assets/Icons/ArrowIcons/Right\ Actionable.svg");
+    }
+  }
+  .swiper-button-prev {
+    color: #8a8a8a;
+    background: #eeeeee;
+    border-radius: 24px;
+
+    &::after {
+      content: url("../../../Assets/Icons/ArrowIcons/Left\ Actionable.svg");
+    }
+  }
+  .top-title {
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    color: $title-color;
+    margin-bottom: 49px;
+  }
+  .card {
+    border: none;
+    width: 936px;
+    height: 363px;
+
+    .image {
+      width: 327px;
+      height: 195px;
+    }
+    .cardTitle > h3 {
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: $title-color;
+      width: 327px;
+    }
+    .cardSubtitle > p {
+      font-family: $main-font;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: $subtitle-color;
+    }
+  }
+}
+

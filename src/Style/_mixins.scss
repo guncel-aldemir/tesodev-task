@@ -1,0 +1,47 @@
+@mixin main-display-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@mixin main-display-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@mixin add-new-record-button {
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  width: 198px;
+  height: 40px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+
+}
+@mixin search-button {
+  width: 138px;
+  height: 46px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  
+  text-align: center;
+  color: #fff;
+  border: none;
+}
+@mixin title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+}
+@mixin search{
+  font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+}
